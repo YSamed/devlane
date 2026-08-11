@@ -8,6 +8,9 @@
     "doc": "docs"
   },
   "scripts": {
+    "dev": "./dev.sh",
+    "dev:api": "./dev.sh api",
+    "dev:web": "./dev.sh web",
     "test": "npm run validate",
     "prepare": "husky",
     "validate": "npm --prefix apps/web run typecheck && npm --prefix apps/web run lint && npm --prefix apps/web run format:check && cd apps/api && go vet ./... && go test ./..."
