@@ -1,0 +1,68 @@
+/**
+ * shadcn/ui tokens, mapped onto Devlane's design tokens.
+ *
+ * Kept separate from tokens.css so the shadcn colour contract stays swappable
+ * and Devlane's own tokens remain the single source of truth. Every value here
+ * is an alias — do not hardcode colours in this file.
+ *
+ * The radius scale (--radius-sm/md/lg) is deliberately NOT redefined: shadcn's
+ * default scale would override Devlane's sharp-corner values in tokens.css.
+ * shadcn components inherit Devlane's radii instead.
+ *
+ * Themes follow tokens.css: light is the default, dark/pink are
+ * [data-theme='…'] on the root. Because every token below is an alias, the
+ * theme switch propagates automatically — no per-theme block is needed.
+ */
+
+@layer base {
+  :root,
+  :host {
+    --background: var(--bg-canvas);
+    --foreground: var(--txt-primary);
+
+    --card: var(--bg-layer-2);
+    --card-foreground: var(--txt-primary);
+    --popover: var(--bg-layer-2);
+    --popover-foreground: var(--txt-primary);
+
+    --primary: var(--bg-accent-primary);
+    --primary-foreground: var(--txt-on-color);
+    --secondary: var(--bg-layer-1);
+    --secondary-foreground: var(--txt-primary);
+
+    --muted: var(--bg-layer-1);
+    --muted-foreground: var(--txt-tertiary);
+    --accent: var(--bg-layer-1-hover);
+    --accent-foreground: var(--txt-primary);
+
+    --destructive: var(--bg-danger-primary);
+    --destructive-foreground: var(--txt-on-color);
+
+    --border: var(--border-subtle);
+    --input: var(--border-subtle);
+    --ring: var(--border-accent-strong);
+  }
+}
+
+/* Expose the tokens above to Tailwind utilities (bg-background, text-muted-foreground, …). */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
