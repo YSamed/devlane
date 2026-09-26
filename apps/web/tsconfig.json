@@ -1,4 +1,13 @@
 {
   "files": [],
-  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
+  // Solution-style config: `files` is empty, so these options do not affect the
+  // build (tsconfig.app.json carries the real ones). They exist because the
+  // shadcn CLI reads path aliases from this file to place generated components.
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
 }

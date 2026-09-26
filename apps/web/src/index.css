@@ -1,5 +1,8 @@
 @import './styles/tokens.css';
+@import './styles/shadcn.css';
 @import 'tailwindcss';
+/* Enter/exit animation utilities (animate-in, fade-in-0, …) used by shadcn components. */
+@import 'tw-animate-css';
 
 /* Devlane base: Inter, antialiased, placeholder, custom scrollbar */
 * {
